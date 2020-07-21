@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  width: 35%;
+}
+
+.container button {
+  width: 15%;
+}
+.container progress {
+  width: 80%;
+}
+
+.container video {
+  width: 100%;
+}
+.container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
