@@ -15,7 +15,7 @@ services:
 
   app:
     build: .
-    image: altotech
+    image: django-monitor
     command: >
       sh -c "python manage.py migrate &&
              python manage.py loaddata room.json &&
@@ -26,15 +26,13 @@ services:
       # - static:/app/public/static
       - media:/app/media
       - tmp:/tmp
+    restart: on-failure
     depends_on:
       - postgres
 
   postgres:
     image: postgres
-    restart: unless-stopped
     env_file: .env-sample
-    ports:
-      - 5432:5432
 
 volumes:
   # static:
